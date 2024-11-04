@@ -11,6 +11,26 @@ entries:
       catalog.cattle.io/scope: management
       catalog.cattle.io/ui-component: plugins
     apiVersion: v2
+    appVersion: 0.1.1
+    created: "2024-11-04T12:03:18.987826218Z"
+    description: kubearmor plugin
+    digest: e5a326ee37b04855ac220d21110749c902a3a3b070636afe185ed077b5cce876
+    icon: https://raw.githubusercontent.com/KrishAryan/kubearmorRUI/main/pkg/kubearmor/assets/icon-KA.svg
+    name: kubearmor
+    type: application
+    urls:
+    - assets/kubearmor/kubearmor-0.1.1.tgz
+    version: 0.1.1
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0 < 1.29.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.7.0-0 < 2.9.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+    apiVersion: v2
     appVersion: 0.1.0
     created: "2024-11-04T10:18:55.947507771Z"
     description: kubearmor plugin
@@ -21,4 +41,4 @@ entries:
     urls:
     - assets/kubearmor/kubearmor-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-04T10:18:55.946581276Z"
+generated: "2024-11-04T12:03:18.987477678Z"
