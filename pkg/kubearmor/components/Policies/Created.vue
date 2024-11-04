@@ -490,7 +490,7 @@ export default {
       <Banner data-testid="kw-policy-create-ah-banner" class="type-banner mb-20 mt-0" color="warning" :closable="true"
         @close="closeBanner('updateHideBannerArtifactHub')">
         <div>
-          <p v-clean-html="('Official Kubewarden policies are hosted on ArtifactHub. In order to show these, you will need to add to the whitelist-domain setting.')"
+          <p v-clean-html="('Official Kubearmor policies are hosted on ArtifactHub. In order to show these, you will need to add to the whitelist-domain setting.')"
             class="mb-10" />
           <AsyncButton mode="artifactHub" @click="addArtifactHub" />
         </div>
