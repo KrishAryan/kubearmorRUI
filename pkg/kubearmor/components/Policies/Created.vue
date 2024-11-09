@@ -17,7 +17,7 @@ import Wizard from '@shell/components/Wizard';
 import { DATA_ANNOTATIONS } from '../../types/artifacthub';
 import PolicyTable from '../../components/Policies/PolicyTable.vue';
 import { handleGrowl } from '../../utils/handle-growl';
-import { ARTIFACTHUB_ENDPOINT, ARTIFACTHUB_PKG_ANNOTATION, VALUES_STATE, KUBEARMOR_PRODUCT_NAME, KUBEWARDEN, DEFAULT_POLICY } from '../../types';
+import { ARTIFACTHUB_ENDPOINT, VALUES_STATE, KUBEARMOR, DEFAULT_POLICY } from '../../types';
 import PolicyReadmePanel from '../../components/Policies/PolicyReadmePanel.vue';
 import Values from '../../components/Policies/Values.vue';
 import { removeEmptyAttrs } from '../../utils/object';
@@ -362,7 +362,7 @@ export default {
         } else {
           merge(this.value, out);
         }
-        if (this.chartType === KUBEWARDEN.ADMISSION_POLICY && this.chartValues?.isNamespaceNew) {
+        if (this.chartType === KUBEARMOR.ADMISSION_POLICY && this.chartValues?.isNamespaceNew) {
           await this.createNamespace(this.value?.metadata?.namespace);
         }
         // Attempt to save the policy

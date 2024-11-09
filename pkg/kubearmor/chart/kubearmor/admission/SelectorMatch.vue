@@ -54,7 +54,7 @@ export default {
       <h4>
         Match Labels
         <i
-          v-clean-tooltip="t('kubewarden.policyConfig.selector.matchLabels.tooltip')"
+          v-clean-tooltip="('MatchLabel for Kubearmor')"
           class="icon icon-info icon-lg"
         />
       </h4>

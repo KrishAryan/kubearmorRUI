@@ -55,7 +55,6 @@ import FileMatch from './FileMatch.vue';
 import TagsInput from './TagsInput'
 import BasicConfig from './BasicConfig.vue';
 import NetworkMatch from './NetworkMatch.vue';
-import {artifactHubPackageNames } from './artifacthubpackages'
 
 export default {
   props: {
@@ -88,7 +87,6 @@ export default {
 
   data() {
     return {
-      artifactHubPackageNames,
       activeTab: null,
       chartValues: null }
     ;
@@ -118,16 +116,9 @@ export default {
     isCustom() {
       return this.customPolicy;
     },
-    isGlobal() {
-      return this.chartType === KUBEWARDEN.ADMISSION_POLICY;
-    },
     targetNamespace() {
       return this.forceNamespace || this.chartValues?.metadata?.namespace || 'default';
     },
-    disabledFile() {
-      const packageName = this.value.metadata?.name || '';
-        return this.artifactHubPackageNames.includes(packageName);
-    }
   },
 
   methods: {

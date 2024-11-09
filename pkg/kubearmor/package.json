@@ -2,7 +2,7 @@
   "name": "kubearmor",
   "description": "kubearmor plugin",
   "icon": "https://raw.githubusercontent.com/KrishAryan/kubearmorRUI/main/pkg/kubearmor/assets/icon-KA.svg",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "rancher": {
     "annotations": {

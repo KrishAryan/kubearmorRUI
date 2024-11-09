@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 export enum DATA_ANNOTATIONS {
-  CONTEXT_AWARE = 'kubewarden/contextAwareResources',
-  RULES = 'kubewarden/rules',
-  MUTATION = 'kubewarden/mutation',
-  RESOURCES = 'kubewarden/resources',
-  QUESTIONS = 'kubewarden/questions-ui'
+  CONTEXT_AWARE = 'kubearmor/contextAwareResources',
+  RULES = 'kubearmor/rules',
+  MUTATION = 'kubearmor/mutation',
+  RESOURCES = 'kubearmor/resources',
+  QUESTIONS = 'kubearmor/questions-ui'
 }
 /* eslint-enable no-unused-vars */
 

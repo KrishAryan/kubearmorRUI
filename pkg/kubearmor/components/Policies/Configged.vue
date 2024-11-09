@@ -103,7 +103,7 @@ export default {
             {{ shortDescription }}
           </p>
           <button v-if="policyReadme" class="btn btn-sm role-link banner__readme-button" @click="showReadme">
-            {{ t('kubewarden.policyConfig.description.showReadme') }}
+            {{ ('Show Readme') }}
           </button>
         </template>
       </div>

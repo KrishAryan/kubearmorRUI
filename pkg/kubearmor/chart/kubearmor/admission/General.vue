@@ -11,7 +11,7 @@ import { Banner } from '@components/Banner';
 import { LabeledInput } from '@components/Form/LabeledInput';
 import { RadioGroup } from '@components/Form/Radio';
 
-import { KUBEWARDEN, KUBEWARDEN_APPS } from '../../../types';
+import { KUBEARMOR} from '../../../types';
 
 export default {
   name: 'General',
@@ -47,8 +47,8 @@ export default {
   },
 
   async fetch() {
-    if ( this.$store.getters['cluster/canList'](KUBEWARDEN.POLICY_SERVER) ) {
-      await this.$store.dispatch('cluster/findAll', { type: KUBEWARDEN.POLICY_SERVER });
+    if ( this.$store.getters['cluster/canList'](KUBEARMOR.POLICY_SERVER) ) {
+      await this.$store.dispatch('cluster/findAll', { type: KUBEARMOR.POLICY_SERVER });
     }
   },
 
@@ -61,9 +61,9 @@ export default {
       policy = this.value || {};
     }
 
-    // fix for https://github.com/rancher/kubewarden-ui/issues/672
+    // fix for https://github.com/rancher/KUBEARMOR-ui/issues/672
     // enforce `default` as namespace for creation of AP's
-    if ( this.mode === _CREATE && this.chartType === KUBEWARDEN.ADMISSION_POLICY ) {
+    if ( this.mode === _CREATE && this.chartType === KUBEARMOR.ADMISSION_POLICY ) {
       set(policy.metadata, 'namespace', 'default');
     }
 
@@ -114,11 +114,11 @@ export default {
     },
 
     isGlobal() {
-      return this.chartType === KUBEWARDEN.CLUSTER_ADMISSION_POLICY;
+      return this.chartType === KUBEARMOR.CLUSTER_ADMISSION_POLICY;
     },
 
     modeDisabled() {
-      // Kubewarden doesn't allow switching a policy from 'protect' to 'monitor'
+      // KUBEARMOR doesn't allow switching a policy from 'protect' to 'monitor'
       if ( !this.isCreate ) {
         return this.initialPolicyMode === 'protect';
       }
@@ -131,7 +131,7 @@ export default {
     },
 
     policyServers() {
-      return this.$store.getters['cluster/all'](KUBEWARDEN.POLICY_SERVER);
+      return this.$store.getters['cluster/all'](KUBEARMOR.POLICY_SERVER);
     },
 
     policyServerOptions() {

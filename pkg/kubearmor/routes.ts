@@ -8,6 +8,9 @@ export const routes: RouteConfig[] = [
     name: `c-cluster-${KA_NAME}-dashboard`,
     path: `/c/:cluster/:product/dashboard`,
     component: Dashboard,
+    meta:      {
+      product: 'dashboard'
+    }
   },
   {
     name: `c-cluster-${KA_NAME}-KubeArmor_Probe`,

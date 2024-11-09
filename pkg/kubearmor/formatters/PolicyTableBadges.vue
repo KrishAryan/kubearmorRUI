@@ -22,16 +22,11 @@ export default {
 
 <template>
   <div class="badge">
-    <div v-if="row.signed" class="badge__signed">
-      <span v-clean-tooltip="t('kubewarden.policyCharts.signedPolicy.tooltip', { signatures: subtypeSignature })">
-        <i class="icon icon-lock" />
-      </span>
-    </div>
     <div v-if="isOfficial" class="badge__icon">
       <img
         v-clean-tooltip="('Kubearmor official policy')"
         src="../assets/kubearmor.svg"
-        :alt="t('kubewarden.policies.official')"
+        :alt="('Kubearmor Icon')"
         class="ml-5"
         style="height: 15px;"
       >

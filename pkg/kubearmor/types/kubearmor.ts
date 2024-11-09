@@ -1,44 +1,30 @@
 
 export const KUBEARMOR_PRODUCT_NAME = 'kubearmor';
-export const KUBEWARDEN_PRODUCT_GROUP = 'policies.kubewarden.io';
 
-export const CHART_NAME = 'rancher-kubewarden';
 
-export const KUBEWARDEN_DASHBOARD = 'dashboard';
-export const KUBEWARDEN_REPO = 'https://charts.kubewarden.io';
+export const KUBEARMOR_DASHBOARD = 'dashboard';
 
-export const KUBEWARDEN_CHARTS = {
+export const KUBEARMOR_CHARTS = {
   CONTROLLER:       'kubearmor-controller',
   DEFAULTS:         'kubearmor-defaults',
 };
 
-export const KUBEWARDEN_APPS = {
+export const KUBEARMOR_APPS = {
   RANCHER_CONTROLLER: 'rancher-kubearmor-controller',
   RANCHER_DEFAULTS:   'rancher-kubearmor-defaults'
 };
 
-export const KUBEWARDEN_LABELS = { POLICY_SERVER: 'kubewarden/policy-server' };
 
-export const KUBEWARDEN = {
-  ADMISSION_POLICY:         'security.kubearmor.com.kubearmorpolicy',
-  CLUSTER_ADMISSION_POLICY: 'policies.kubewarden.io.clusteradmissionpolicy',
-  POLICY_SERVER:            'policies.kubewarden.io.policyserver'
+export const KUBEARMOR = {
+  ADMISSION_POLICY:'security.kubearmor.com.kubearmorpolicy',
 };
 
 /* eslint-disable no-unused-vars */
-export enum KUBEWARDEN_CRD {
-  ADMISSION_POLICY = 'dmissionpolicies.policies.kubewarden.io',
-  CLUSTER_ADMISSION_POLICY = 'clusteradmissionpolicies.policies.kubewarden.io',
-  POLICY_SERVER = 'policyservers.policies.kubewarden.io'
+export enum KUBEARMOR_CRD {
+  ADMISSION_POLICY = 'security.kubearmor.com.kubearmorpolicy',
 }
 /* eslint-enable no-unused-vars */
 
-export interface Rule {
-  apiGroups: string[];
-  apiVersions: string[];
-  operations: string[];
-  resources: string[];
-}
 // Basic alternative for V1ObjectMeta (metadata usually includes name, namespace, labels, etc.)
 export interface ObjectMeta {
   name?: string;
@@ -83,7 +69,6 @@ export interface Policy {
     action?: 'Allow' | 'Audit' | 'Block'; // Action to take (KubeArmor-specific)
     message?: string; // Message to display for policy violations (KubeArmor)
 
-    // Shared and Kubewarden fields
     backgroundAudit?: boolean;
     matchConditions?: MatchCondition[];
     matchPolicy?: string;
@@ -94,9 +79,6 @@ export interface Policy {
     objectSelector?: LabelSelector;
     selector?: LabelSelector; // Selector for KubeArmor policies
     policyServer?: string; // Optional, may not be required for KubeArmor
-    rules?: Array<Rule>; // Optional for KubeArmor, required for Kubewarden
-
-    // Additional KubeArmor settings, including file/process/network controls
     file?: {
       matchPaths?: Array<{
         path: string;
@@ -142,7 +124,6 @@ export interface Policy {
       }>;
     };
 
-    // Additional Kubewarden settings
     failurePolicy?: string;
     settings?: any;
     sideEffects?: string;

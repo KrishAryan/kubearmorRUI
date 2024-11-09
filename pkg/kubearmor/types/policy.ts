@@ -1,4 +1,4 @@
-import { Policy } from './kubewarden';
+import { Policy } from './kubearmor';
 
 export const DEFAULT_POLICY: Policy = {
   apiVersion: '', 

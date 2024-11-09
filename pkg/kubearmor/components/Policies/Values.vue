@@ -12,7 +12,7 @@ import ResourceCancelModal from '@shell/components/ResourceCancelModal';
 import Tabbed from '@shell/components/Tabbed';
 import YamlEditor, { EDITOR_MODES } from '@shell/components/YamlEditor';
 
-import { ARTIFACTHUB_ENDPOINT, ARTIFACTHUB_PKG_ANNOTATION,KUBEWARDEN_CHARTS, VALUES_STATE, YAML_OPTIONS } from '../../types';
+import { ARTIFACTHUB_ENDPOINT, ARTIFACTHUB_PKG_ANNOTATION,KUBEARMOR_CHARTS, VALUES_STATE, YAML_OPTIONS } from '../../types';
 
 export default {
   name: 'Values',
@@ -49,7 +49,7 @@ export default {
       this.version = this.$store.getters['catalog/version']({
         repoType:      'cluster',
         repoName:      'kubearmor',
-        chartName:     KUBEWARDEN_CHARTS.CONTROLLER,
+        chartName:     KUBEARMOR_CHARTS.CONTROLLER,
       });
       await this.loadValuesComponent();
     } catch (e) {
